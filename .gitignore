@@ -1,0 +1,25 @@
+# Editor directories and files
+.vscode
+.idea
+
+.env
+.env.local
+.env.production
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+node_modules
+dist
+
+##manual changes
+frontend/node_modules
+backend/node_modules
+backend/.env
+backend/.env.local
+backend/.env.production
+frontend/.env
+frontend/.env.local
+frontend/.env.production
