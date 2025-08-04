@@ -6,14 +6,15 @@ const allowedOrigins = [
 
 const corsOptions = {
   origin: (origin, callback) => {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin)
+    console.log("Incoming origin:", origin);
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
-    else
-      callback(new Error("Not allowed by CORS."));
-
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
   },
   credentials: true,
-  optionsSuccessStatus: 200,
+  optionsSuccessStatus: 200
 };
 
 module.exports = corsOptions;
