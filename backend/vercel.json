@@ -3,14 +3,14 @@
     "name" : "ProCtrl",
     "builds" : [
         {
-            "src" : "./app.js",
+            "src" : "backend/src/app.js",
             "use" : "@vercel/node"
         }
     ],
     "routes" : [
         {
             "src" : "/(.*)",
-            "dest" : "/"
+            "dest": "backend/src/app.js"
         }
     ]
 }     

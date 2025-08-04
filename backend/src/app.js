@@ -14,6 +14,10 @@ const { logEvents, logger } = require("./middlewares/logger.middleware.js");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.get("/", (req, res) => {
+  res.send("Hello from Vercel Serverless!");
+});
+
 // connect to MongoDB
 connectDB();
 
@@ -60,3 +64,5 @@ mongoose.connection.on("error", (err) => {
   console.error(err.message);
   logEvents(err.message, "mongo.error.log");
 });
+
+module.exports = app;
