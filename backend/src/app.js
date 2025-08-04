@@ -2,10 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const corsOptions = require("./config/corsOptions");
 const cookieParser = require("cookie-parser");
 const path = require("node:path");
-
-const corsOptions = require("./config/corsOptions");
 const connectDB = require("./config/connectDB");
 
 const { errorHandler } = require("./middlewares/error-handler.middleware");
@@ -14,6 +13,7 @@ const { logEvents, logger } = require("./middlewares/logger.middleware.js");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(cors(corsOptions));
 app.get("/", (req, res) => {
   res.send("Hello from Vercel Serverless!");
 });
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 connectDB();
 
 app.use(logger);
-app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
