@@ -1,4 +1,8 @@
-const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(",") || [];
+// const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(",") || [];
+const allowedOrigins = [
+  'http://localhost:3000', 
+  'https://proctrl.vercel.app'
+];
 
 const corsOptions = {
   origin: (origin, callback) => {
