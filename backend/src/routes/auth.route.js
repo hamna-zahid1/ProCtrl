@@ -17,4 +17,8 @@ router.use(verifyToken);
 router.post("/logout", logout);
 router.get("/products", getProductsByUser);
 
+router.get('/refresh', (req, res) => {
+  res.json({ message: "refresh route hit" });
+});
+
 module.exports = router;
