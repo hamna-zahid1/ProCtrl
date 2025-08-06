@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const corsOptions = require("./config/corsOptions");
-app.use(cors(corsOptions));
+
 const cookieParser = require("cookie-parser");
 const path = require("node:path");
 const connectDB = require("./config/connectDB");
@@ -14,7 +14,7 @@ const { logEvents, logger } = require("./middlewares/logger.middleware.js");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-
+app.use(cors(corsOptions));
 app.get("/", (req, res) => {
   res.send("Hello from Vercel Serverless!");
 });
