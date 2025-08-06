@@ -23,3 +23,5 @@ backend/.env.production
 frontend/.env
 frontend/.env.local
 frontend/.env.production
+
+.vercel
