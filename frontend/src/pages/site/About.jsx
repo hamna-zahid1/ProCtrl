@@ -1,4 +1,4 @@
-
+import useTitle from "@/hooks/useTitle.js";
 import { FaPaintBrush, FaCartPlus, FaGamepad } from "react-icons/fa";
 import Image1 from '@/assets/images/imgi_11_IMG1.jpg';
 import Image2 from '@/assets/images/imgi_12_IMG2.jpg';
@@ -16,6 +16,7 @@ import Store2 from '@/assets/images/imgi_29_Store2.jpg';
 import Store3 from '@/assets/images/imgi_30_Store3.jpg';
 
 export default function About() {
+  useTitle("ProCtrl | About Us");
   return (
     <div className="font-poppins text-gray-900 dark:text-white bg-white dark:bg-dark-primary">
       {/* Hero Section */}

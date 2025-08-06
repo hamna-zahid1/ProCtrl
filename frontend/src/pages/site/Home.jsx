@@ -12,7 +12,7 @@ import ProductSlider from "@/components/home/ProductSlider";
 import ProductHighlightSection from "@/components/home/ProductHighlightSection.jsx"; // Uncomment if needed
 
 const Home = () => {
-  useTitle("ProCtrl | Explore Shop Thrive");
+  useTitle("ProCtrl | Home");
   const products = useSelector(selectProducts);
   const filteredProducts = useFilterProducts(products);
 
