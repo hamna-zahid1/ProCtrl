@@ -10,18 +10,9 @@ const logEvents = async (message, logFileName) => {
   const dateTime = format(new Date(), "yyyy/MM/dd\tHH:mm:ss");
   const logItem = `${dateTime}\t${uuidv4()}\t${message}\n`;
 
-  try {
-    if (!fs.existsSync(logsDirPath))
-      await fsPromises.mkdir(logsDirPath);
-
-    await fsPromises.appendFile(
-      path.join(logsDirPath, logFileName),
-      logItem,
-    );
-  } catch (err) {
-    console.error(err);
-  }
+  console.log(logItem); // Console logging works on Vercel
 };
+
 
 const loggerMiddleware = (req, res, next) => {
   logEvents(`${req.method}\t${req.url}\t${req.headers.origin}`, "request.log");
